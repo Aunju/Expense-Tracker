@@ -1,0 +1,28 @@
+﻿@model Expense_Tracker.Models.Expense_Category
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center">Update Category</h2>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreatorEdit">
+
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group text-center">
+                <label asp-for="CategoryName"></label>
+                <input asp-for="CategoryName" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div><br/>
+            <div class="form-group text-center">
+                <input type="submit" value="update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Category">Back to List</a>
+</div>
+
+

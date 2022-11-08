@@ -1,0 +1,39 @@
+﻿@model Expense_Tracker.Models.Expenses
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="text-center ml-3">Add New Expenses</h4>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="CreatorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Date" class="col-2">Expense Date</label>
+                <input type="date" asp-for="Date" id="expenseDate" class="col-5" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div><br/>
+            <div class="form-group">
+                <label asp-for="Amount" class="col-2">Expense Amount</label>
+                <input type="number" class="col-5" asp-for="Amount" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <label class="col-2">Expense Category</label>
+                <select asp-for="Id" class="col-5" asp-items="@(new SelectList(ViewBag.categories,"Id","CategoryName"))">
+                    <option selected="selected" value="0">--Select One--</option>
+                </select>
+            </div><br />
+            <div class="col-10 offset-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="container mb-4">
+        <a asp-action="Index" asp-controller="Expenses" >Back List</a>
+    </div>
+</div>
+

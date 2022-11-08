@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Logout";
+}
+
+
+@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> _signInManager
+
+@if (_signInManager.IsSignedIn(User))
+{
+   @* <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hello @(User.FindFirst("UserFirstName").Value + " " + User.FindFirst("UserLastName").Value)
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
+        </div>
+
+    </li>*@
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hello @(User.FindFirst("UserFirstName")?.Value + " " + User.FindFirst("UserLastName")?.Value)
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a></li>
+
+        </ul>
+    </li>
+
+}
+else
+{
+    <li class="nav-item">
+        <a lass="nav-link text-dark" style="text-decoration:none" asp-area="" asp-controller="Account" asp-action="signup">Register</a>
+        <a lass="nav-link text-dark" style="text-decoration:none" asp-area="" asp-controller="Account" asp-action="login">Login</a>
+    </li>
+}

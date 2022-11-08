@@ -1,0 +1,27 @@
+﻿@model Expense_Tracker.Models.Expense_Category
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Add New Category</h1><br/>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreatorEdit">
+            <div class="form-group text-center">
+                <label asp-for="CategoryName"></label>
+                <input asp-for="CategoryName" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div><br/>
+            <div class="col-10 offset-5">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="container mb-4">
+    <a asp-action="Index" asp-controller="Home">Back To List</a>
+</div>
+
+

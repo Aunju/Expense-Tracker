@@ -1,0 +1,43 @@
+﻿@model Expense_Tracker.Models.SignUp
+@{
+    ViewData["Title"] = "signUp";
+}
+
+<h1 class="text-capitalize ml-4">signup Here</h1>
+
+<div class="row">
+    <div class="col-md-7 mt-lg-5">
+        <form asp-action="signup">
+            <div class="form-group">
+                <label class="col-2" asp-for="FirstName"></label>
+                <input class="col-5" asp-for="FirstName" autocomplete="off" />
+                <span class="text-danger" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-group">
+                <label class="col-2" asp-for="LastName"></label>
+                <input class="col-5" asp-for="LastName" autocomplete="off" />
+                <span class="text-danger" asp-validation-for="LastName"></span>
+            </div>
+            <div class="form-group">
+                <label class="col-2" asp-for="Email"></label>
+                <input class="col-5" asp-for="Email" type="email" autocomplete="off" />
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label class="col-2" asp-for="Password"></label>
+                <input class="col-5" asp-for="Password" type="password" autocomplete="off" />
+                <span class=" text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <label class="col-2" asp-for="ConfirmPassword"></label>
+                <input class="col-5" asp-for="ConfirmPassword" type="password" autocomplete="off" />
+                <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <div class="col-6 offset-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+   
+</div>
+
